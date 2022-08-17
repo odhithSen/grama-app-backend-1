@@ -1,3 +1,3 @@
 runtime: nodejs16
 service: grama-app-backend
-api_version: 1.0.1
+version: 1.0.1
