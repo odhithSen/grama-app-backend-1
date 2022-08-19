@@ -1,5 +1,5 @@
 var http = require("http");
-var _NAME;
+var _NAME = "kd";
 
 http.createServer(function (request, response) {
    response.writeHead(200, {'Content-Type': 'text/plain'});
