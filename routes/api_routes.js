@@ -13,7 +13,7 @@ import {update_status_api} from "../controllers/update-status-api.js"
 //routes
 router.post("/Identity-Check", id_check_api);
 router.post("/Address-Check", address_check_api);
-router.get("/Police-Check", police_check_api);
+router.post("/Police-Check", police_check_api);
 router.get("/Status-Check", status_check_api);
 router.get("/Fetch-Pending-Requests", pending_certificate_request_api);
 router.get("/Fetch-Certificate-Details", fetch_certificate_details_api);

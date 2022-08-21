@@ -23,7 +23,7 @@ export const id_check_api  = async(req, res) =>{
         try {
                 const id_details = {
                     user_nic: userData.user_nic.stringValue,
-                    user_full_address: userData.user_full_adress.stringValue,
+                    user_full_address: userData.user_full_address.stringValue,
                     user_district: userData.user_district.stringValue,
                     user_date_of_birth: userData.user_date_of_birth.stringValue,
                     officer_id: userData.officer_id.stringValue,
@@ -63,7 +63,7 @@ export const id_check_api  = async(req, res) =>{
                 res.status(200).json({status: "sucess"});
                 
             } catch (error) {
-                send_slack_message("Identity Check API failed with status: 500", error.message)
+                send_slack_message("Identity Check API failed. In Line number 66.", error.message)
                 console.log(error.message);
                 res.status(500).json({ message: error.message })
             }

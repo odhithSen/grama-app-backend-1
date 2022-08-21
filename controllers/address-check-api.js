@@ -29,11 +29,10 @@ export const address_check_api = async(req, res) =>{
                 new: true
             })
             
-            console.log(result);
             res.status(200).json({status: "sucess"});
                 
             } catch (error) {
-                send_slack_message("Address Check API failed with status: 500", error.message)
+                send_slack_message("Address Check API failed. In Line number 35.", error.message)
                 console.log(error.message);
                 res.status(500).json({ message: error.message })
             }
@@ -42,30 +41,3 @@ export const address_check_api = async(req, res) =>{
         res.status(400).json({status: "failed", message: "File upload failed"})
     }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export const address_check_api = (req,res) =>{
-//     console.log("this is address check api")
-//     res.status(200).json({ message: "this is address check api" });
-// }
