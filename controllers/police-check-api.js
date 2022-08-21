@@ -84,11 +84,11 @@ async function handdlePoliceData(policeReport, user_nic, res){
         } catch (error) {
             send_slack_message("Police Check API failed. In Line number 84.", error.message);
             console.log(error.message);
-            res.status(500).json({message: error.message})
+            res.status(500).json({message: error.message});
         }
 
     } catch (error) {
-        res.status(400).json({status: "failed", message: error.message})
+        res.status(400).json({status: "failed", message: error.message});
     }
 }
 
