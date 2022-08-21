@@ -12,7 +12,7 @@ import {fetch_certificate_details_api} from "../controllers/fetch-certificate-de
 import {update_status_api} from "../controllers/update-status-api.js"
 
 //routes
-router.get("/Identity-Check", id_check_api);
+router.post("/Identity-Check", id_check_api);
 router.get("/Address-Check", address_check_api);
 router.get("/Police-Check", police_check_api);
 router.get("/Status-Check", status_check_api);
