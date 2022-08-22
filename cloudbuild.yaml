@@ -1,4 +1,21 @@
 steps:
+- name: node:10.15.1
+  entrypoint: npm
+  args: ["install"]
+- name: node:10.15.1
+  entrypoint: npm
+  args: ["run", "create-env"]
+  env:
+    - 'PORT=${_PORT}'
+    - 'CONNECTION_URL=${_CONNECTION_URL}'
+    - 'USER_DATABASE_URL=${_USER_DATABASE_URL}'
+    - 'GRAMA_OFFICER_DATABASE_URL=${_GRAMA_OFFICER_DATABASE_URL}'
+    - 'POLICE_DATABASE_URL=${_POLICE_DATABASE_URL}'
+    - 'SLACK_TOKEN=${_SLACK_TOKEN}'
+    - 'EMAIL_USER=${_EMAIL_USER}'
+    - 'CLIENT_ID=${_CLIENT_ID}'
+    - 'CLIENT_SECRET=${_CLIENT_SECRET}'
+    - 'REFRESH_TOKEN=${_REFRESH_TOKEN}'
 - name: "gcr.io/cloud-builders/gcloud"
   args: ["app", "deploy"]
 timeout: "1600s"
