@@ -64,7 +64,7 @@ export const id_check_api  = async(req, res) =>{
             } catch (error) {
                 send_slack_message("Identity Check API failed. In Line number 66.", error.message)
                 console.log(error.message);
-                res.status(500).json({ message: "error.message" })
+                res.status(500).json({ message: error.message })
             }
             
     } catch (error) {
