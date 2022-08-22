@@ -49,38 +49,38 @@ export function send_officer_email (officer_full_name, officer_email, user_nic, 
     transport.close();
 }
 
-// /* method for sending e-mails for users */
-// export function send_user_email (officer_full_name, officer_email, user_nic, user_full_name){
-//     const accessToken = OAuth2_client.getAccessToken();
+/* method for sending e-mails for users */
+export function send_user_email (user_email, user_nic, user_full_name){
+    const accessToken = OAuth2_client.getAccessToken();
 
-//     const transport = nodemailer.createTransport({
-//         service: "gmail",
-//         auth: {
-//             type: "OAuth2",
-//             user: user,
-//             clientId: clientId,
-//             clientSecret: clientSecret,
-//             refreshToken: refreshToken,
-//             accessToken: accessToken
-//         }
-//     })
+    const transport = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            type: "OAuth2",
+            user: user,
+            clientId: clientId,
+            clientSecret: clientSecret,
+            refreshToken: refreshToken,
+            accessToken: accessToken
+        }
+    })
 
-//     const mail_Option = {
-//         from: `noreply@Grama_Check<${user}>`,
-//         to: officer_email,
-//         subject: "[Grama Check] - New Certificate Request",
-//         text: `Hi ${officer_full_name}, \nThere is a new Gramasevaka certificate request from: ${user_full_name} - (${user_nic}).`
-//     }
+    const mail_Option = {
+        from: `noreply@Grama_Check<${user}>`,
+        to: user_email,
+        subject: "[Grama Check] - Gramasevaka Certificate Request",
+        text: `Hi ${user_full_name}, \nYour Gramasevaka certificate (NIC- ${user_nic}), is ready to be collected at your gramasevaka office.`
+    }
 
-//     transport.sendMail(mail_Option, function(err, result){
-//         if(err){
-//             console.log(err);
-//             send_slack_message("Officer email service failed. In Line number 45.", err.message);
-//         }else{
-//             console.log("Email sent", result);
-//         }
-//     })
+    transport.sendMail(mail_Option, function(err, result){
+        if(err){
+            console.log(err);
+            send_slack_message("User email service failed. In Line number 78.", err.message);
+        }else{
+            console.log("Email sent", result);
+        }
+    })
 
-//     transport.close();
+    transport.close();
 
-// }
+}

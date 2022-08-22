@@ -17,6 +17,6 @@ router.post("/Police-Check", police_check_api);
 router.get("/Status-Check", status_check_api);
 router.get("/Fetch-Pending-Requests", pending_certificate_request_api);
 router.get("/Fetch-Certificate-Details", fetch_certificate_details_api);
-router.get("/Update-Certificate-Status", update_status_api);
+router.put("/Update-Certificate-Status", update_status_api);
 
 export default router;
