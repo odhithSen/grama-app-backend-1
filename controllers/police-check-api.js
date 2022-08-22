@@ -7,12 +7,9 @@ import {send_officer_email} from "../utils/email-service.js"
 dotenv.config();
 
 // Gov. police database url 
-const policeDatabaseUrl = "https://firestore.googleapis.com/v1/projects/choreo-asgardeo-intern-p-gcp/databases/(default)/documents/Police-Report-Details"  
-// const policeDatabaseUrl = process.env.POLICE_DATABASE_URL;
-
+const policeDatabaseUrl = process.env.POLICE_DATABASE_URL;
 // Gov. grama officer database url 
-const gramaOfficerDatabaseUrl = "https://firestore.googleapis.com/v1/projects/choreo-asgardeo-intern-p-gcp/databases/(default)/documents/Grama-Officer-Details"  
-// const gramaOfficerDatabaseUrl = process.env.GRAMA_OFFICER_DATABASE_URL;
+const gramaOfficerDatabaseUrl = process.env.GRAMA_OFFICER_DATABASE_URL;
  
 /* method to check police database and add them to the 
 gramasewaka certificate*/

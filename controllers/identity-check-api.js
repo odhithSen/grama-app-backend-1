@@ -6,8 +6,7 @@ import {send_slack_message} from "../utils/slack-message.js"
 dotenv.config();
 
 // Gov. user database url 
-const userDatabaseUrl = "https://firestore.googleapis.com/v1/projects/choreo-asgardeo-intern-p-gcp/databases/(default)/documents/User-Details"  
-// const userDatabaseUrl = process.env.USER_DATABASE_URL;
+const userDatabaseUrl = process.env.USER_DATABASE_URL;
 
  /* method to get the user entered Nic number and check it against the Gov.
  database and initiate the creation of the gramasevaka certificate. */

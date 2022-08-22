@@ -4,8 +4,7 @@ import dotenv  from "dotenv";
 dotenv.config();
 
 // Slack token
-const slackToken = 'xoxb-3853243576295-3891550629680-Q5WYECURrFXtYvLuV6kGxgbX';
-// const slackToken = process.env.SLACK_TOKEN;
+const slackToken = process.env.SLACK_TOKEN;
 
 // function to send slack messages to inform server errors.
 export async function send_slack_message (message, errorInfo){
