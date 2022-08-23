@@ -41,8 +41,7 @@ export const police_check_api = async(req, res) =>{
 
         } else{
             send_slack_message("Police Check API failed. In Line number 42.", error.message);
-            console.log(error.message);
-            res.status(500).json({message: error.message})
+            res.status(500).json({message: "Internal Server Error"})
         }
     }
 };
@@ -76,16 +75,15 @@ async function handdlePoliceData(policeReport, user_nic, res){
             const user_nic = result.user_nic;
 
             send_officer_email (officer_full_name , officer_email, user_nic, user_full_name);
-            res.status(200).json({status: "sucess"});
+            res.status(200).json({status: "success"});
         
         } catch (error) {
             send_slack_message("Police Check API failed. In Line number 84.", error.message);
-            console.log(error.message);
-            res.status(500).json({message: error.message});
+            res.status(500).json({message: "Internal Server Error"});
         }
 
     } catch (error) {
-        res.status(400).json({status: "failed", message: error.message});
+        res.status(400).json({status: "failed", message: "Invalid nic number"});
     }
 }
 

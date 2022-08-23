@@ -39,7 +39,6 @@ export function send_officer_email (officer_full_name, officer_email, user_nic, 
 
     transport.sendMail(mail_Option, function(err, result){
         if(err){
-            console.log(err);
             send_slack_message("Officer email service failed. In Line number 45.", err.message);
         }else{
             console.log("Email sent", result);
@@ -74,7 +73,6 @@ export function send_user_email (user_email, user_nic, user_full_name){
 
     transport.sendMail(mail_Option, function(err, result){
         if(err){
-            console.log(err);
             send_slack_message("User email service failed. In Line number 78.", err.message);
         }else{
             console.log("Email sent", result);

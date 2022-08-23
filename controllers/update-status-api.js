@@ -25,7 +25,7 @@ export const update_status_api = async(req, res) =>{
                 const user_nic = result.user_nic;
 
                 send_user_email (user_email, user_nic, user_full_name);
-                res.status(200).json({status: "sucess", message: "completed"});
+                res.status(200).json({status: "success", message: "completed"});
 
             } else{
                 res.status(400).json({status: "failed", message: "Invalid nic number"})
@@ -33,8 +33,7 @@ export const update_status_api = async(req, res) =>{
 
       } catch (error) {
         send_slack_message("Status Update API. In Line number 38.", error.message);
-        console.log(error.message);
-        res.status(500).json({message: error.message});
+        res.status(500).json({message: "Internal Server Error"});
       }
     
 };

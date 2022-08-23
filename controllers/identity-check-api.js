@@ -59,12 +59,11 @@ export const id_check_api  = async(req, res) =>{
                 }
                 const newCertificate = new Grama_Certificate_Details (cert);
                 const certificateData = await newCertificate.save();
-                res.status(200).json({status: "sucess"});
+                res.status(200).json({status: "success"});
                 
             } catch (error) {
                 send_slack_message("Identity Check API failed. In Line number 66.", error.message)
-                console.log(error.message);
-                res.status(500).json({ message: error.message })
+                res.status(500).json({ message: "Internal Server Error"})
             }
             
     } catch (error) {

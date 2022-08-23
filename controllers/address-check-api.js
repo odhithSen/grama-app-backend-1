@@ -29,12 +29,11 @@ export const address_check_api = async(req, res) =>{
                 new: true
             })
             
-            res.status(200).json({status: "sucess"});
+            res.status(200).json({status: "success"});
                 
             } catch (error) {
                 send_slack_message("Address Check API failed. In Line number 35.", error.message)
-                console.log(error.message);
-                res.status(500).json({ message: error.message })
+                res.status(500).json({ message: "Internal Server Error"});
             }
             
     } catch (error) {

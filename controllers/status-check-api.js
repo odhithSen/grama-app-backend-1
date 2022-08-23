@@ -32,7 +32,6 @@ export const status_check_api = async(req, res) =>{
 
       } catch (error) {
         send_slack_message("Status Check API failed. In Line number 22.", error.message);
-        console.log(error.message);
-        res.status(500).json({message: error.message});
+        res.status(500).json({message: "Internal Server Error"});
       }
 };
