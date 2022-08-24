@@ -11,7 +11,7 @@ export const auth_user = (req,res,next) => {
 
     if (typeof(authorization_header) != "undefined"){
 
-        axios.get('https://api.asgardeo.io/t/sample404/oauth2/userinfo', {
+        axios.get(Asgardeo_Url, {
             headers: {
                 'Authorization': authorization_header
             }
