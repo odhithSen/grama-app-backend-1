@@ -1,5 +1,7 @@
 // import dependencies
 import express from "express";
+import {auth_user} from "../middlewares/user-middlewares.js";
+import {auth_officer} from "../middlewares/officer-middlewares.js"
 const router = express.Router();
 
 import {id_check_api} from "../controllers/identity-check-api.js"
@@ -11,12 +13,12 @@ import {fetch_certificate_details_api} from "../controllers/fetch-certificate-de
 import {update_status_api} from "../controllers/update-status-api.js"
 
 //routes
-router.post("/Identity-Check", id_check_api);
-router.post("/Address-Check", address_check_api);
-router.post("/Police-Check", police_check_api);
-router.post("/Status-Check", status_check_api);
-router.post("/Fetch-Pending-Requests", pending_certificate_request_api);
-router.post("/Fetch-Certificate-Details", fetch_certificate_details_api);
-router.put("/Update-Certificate-Status", update_status_api);
+router.post("/Identity-Check", auth_user, id_check_api);
+router.post("/Address-Check", auth_user, address_check_api);
+router.post("/Police-Check", auth_user, police_check_api);
+router.post("/Status-Check", auth_user, status_check_api);
+router.post("/Fetch-Pending-Requests", auth_officer, pending_certificate_request_api);
+router.post("/Fetch-Certificate-Details", auth_officer, fetch_certificate_details_api);
+router.put("/Update-Certificate-Status", auth_officer, update_status_api);
 
 export default router;
