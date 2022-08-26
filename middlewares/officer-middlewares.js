@@ -6,7 +6,7 @@ dotenv.config();
 
 /* Authorization middleware for officer APIs*/
 export const auth_officer = (req,res,next) => {
-    const authorization_header = req.headers.authorization;
+    const authorization_header = req.headers.auth;
     const Asgardeo_Url = process.env.ASGARDEO_URL;
 
     if (typeof(authorization_header) != "undefined"){

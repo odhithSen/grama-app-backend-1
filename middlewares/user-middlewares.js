@@ -6,7 +6,7 @@ dotenv.config();
 
 /* Authorization middleware for user APIs*/
 export const auth_user = (req,res,next) => {
-    const authorization_header = req.headers.apple;
+    const authorization_header = req.headers.auth;
     const Asgardeo_Url = process.env.ASGARDEO_URL;
 
     if (typeof(authorization_header) != "undefined"){
